@@ -9,12 +9,12 @@ def add_product():
     url = input("Please provide a link to the product: ").strip()
 
     if main_functions.check_URL(url):
-        produkt = web_scraping.get_info(url)
-        print("\nYour product is: %s, his price is %s" %(produkt.title, produkt.price))
+        product = web_scraping.get_info(url)
+        print("\nYour product is: %s, his price is %s" %(product.title, product.price))
 
-        toDo = input("Do you want to add product to Your report?(Y/N): ")
-        if toDo == "Y" or toDo == 'y':
-            reports.add_toRep(produkt)
+        whatToDo = input("Do you want to add product to Your report?(Y/N): ")
+        if whatToDo == "Y" or whatToDo == 'y':
+            reports.add_toRep(product)
         else: main_functions.clear_screen()
 
 def refresh_report():
@@ -36,8 +36,8 @@ def main():
         selection = input("Choose option: ")
         main_functions.clear_screen()
 
-        toDo = actions.get(selection, no_such_action)
-        toDo()
+        whatToDo = actions.get(selection, no_such_action)
+        whatToDo()
 
 
 
